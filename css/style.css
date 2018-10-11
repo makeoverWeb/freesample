@@ -418,7 +418,6 @@ img {
   padding: 25px 15px 0;
   margin: 0 auto;
   max-width: 420px;
-  min-height: 600px;
   height: 100vh;
   background-image: url(../img/bg-header-mobile.jpg);
   background-size: cover;
@@ -513,10 +512,10 @@ img {
   width: 50px;
   height: 225px;
   background-image: url(../img/road-dashed-mobile.png);
-  margin: 0 auto;
+  background-repeat: no-repeat;
   position: absolute;
-  right: 45%;
-  bottom: -50px; }
+  bottom: -50px;
+  left: 43%; }
 
 .services {
   background-color: #f3f3f3;
@@ -632,6 +631,10 @@ img {
   font-size: 50px;
   margin: 30px 0 60px; }
 
+.label {
+  width: 90px;
+  height: 110px; }
+
 @media (min-width: 768px) {
   .page-header {
     max-width: 768px;
@@ -686,7 +689,24 @@ img {
   .main-nav__list {
     width: 430px; }
   .page-header__title {
-    margin: 0; } }
+    margin: 0; }
+  .services {
+    max-width: 768px; }
+  .services__wrap {
+    margin: 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .services__item {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%; }
+  .page-header__road-dashed {
+    left: 46%; } }
 
 @media (min-width: 1200px) {
   .page-header {
@@ -698,4 +718,6 @@ img {
   .page-header__title {
     font-weight: bold; }
   .page-header__title--uppercase {
-    margin: 30px 0 40px; } }
+    margin: 30px 0 40px; }
+  .page-header__road-dashed {
+    left: 47.5%; } }

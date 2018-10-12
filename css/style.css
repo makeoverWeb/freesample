@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
@@ -419,6 +420,7 @@ img {
   margin: 0 auto;
   max-width: 420px;
   height: 100vh;
+  text-align: center;
   background-image: url(../img/bg-header-mobile.jpg);
   background-size: cover;
   background-position: center;
@@ -426,7 +428,8 @@ img {
   position: relative; }
 
 .page-header__top-line {
-  height: auto; }
+  height: auto;
+  text-align: left; }
 
 .page-header__title {
   color: #0d3351;
@@ -511,11 +514,16 @@ img {
 .page-header__road-dashed {
   width: 50px;
   height: 225px;
-  background-image: url(../img/road-dashed-mobile.png);
-  background-repeat: no-repeat;
-  position: absolute;
-  bottom: -50px;
-  left: 43%; }
+  display: inline-block; }
+  .page-header__road-dashed::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -50px;
+    width: 50px;
+    height: 225px;
+    background-image: url(../img/road-dashed-mobile.png);
+    background-repeat: no-repeat; }
 
 .services {
   background-color: #f3f3f3;
@@ -544,10 +552,10 @@ img {
 
 .services__title--blue {
   color: #26a9df;
-  font-size: 22px;
+  font-size: 18px;
   padding-left: 20px;
   padding-right: 20px;
-  margin: 30px 0 10px; }
+  margin: 15px 0 0; }
 
 .services__title--bold {
   font-weight: bold; }
@@ -568,9 +576,12 @@ img {
   background-position: bottom; }
 
 .services__item {
-  margin: 20px 0 10px;
+  margin: 20px 0 0;
   background-color: #fff;
-  text-align: left; }
+  text-align: left;
+  position: relative; }
+  .services__item:nth-child(3) {
+    display: none; }
 
 .services__item--s1 {
   background-image: url(../img/bg-s1-mobile.jpg);
@@ -616,8 +627,7 @@ img {
   padding-right: 20px;
   font-weight: normal;
   line-height: 34px;
-  margin-bottom: 10px;
-  margin-top: 0; }
+  margin: 0; }
 
 .services__lehgth {
   color: #0d3351;
@@ -628,12 +638,107 @@ img {
 .services__price {
   color: #0d3351;
   padding-left: 20px;
-  font-size: 50px;
-  margin: 30px 0 60px; }
+  font-size: 40px;
+  margin: 30px 0 40px; }
 
-.label {
+.label--hit::before {
+  content: 'ХИТ ПРОДАЖ';
   width: 90px;
-  height: 110px; }
+  height: 100px;
+  position: absolute;
+  top: -10px;
+  right: 45px;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 20px;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  padding-top: 20px;
+  background-image: url(../img/hit-blue-mobile.png);
+  background-repeat: no-repeat; }
+
+.label--action::before {
+  content: 'АКЦИЯ';
+  width: 90px;
+  height: 100px;
+  position: absolute;
+  top: -10px;
+  right: 45px;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  line-height: 20px;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  padding-top: 20px;
+  background-image: url(../img/hit-red-mobile.png);
+  background-repeat: no-repeat;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.label--sale::before {
+  content: 'СКИДКА 10%';
+  width: 90px;
+  height: 100px;
+  position: absolute;
+  top: -10px;
+  right: 45px;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 20px;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  padding-top: 20px;
+  background-image: url(../img/hit-red-mobile.png);
+  background-repeat: no-repeat; }
+
+.old-price--15::after {
+  content: '15000 руб.';
+  display: block;
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  color: #a2aab3;
+  font-size: 16px;
+  text-decoration: line-through; }
+
+.old-price--10::after {
+  content: '10000 руб.';
+  display: block;
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  color: #a2aab3;
+  font-size: 20px;
+  text-decoration: line-through; }
 
 @media (min-width: 768px) {
   .page-header {
@@ -705,13 +810,37 @@ img {
   .services__item {
     -ms-flex-preferred-size: 48%;
         flex-basis: 48%; }
-  .page-header__road-dashed {
-    left: 46%; } }
+  .services__item--s1 {
+    background-image: url(../img/bg-s1-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .services__item--s2 {
+    background-image: url(../img/bg-s2-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .services__item--s3 {
+    background-image: url(../img/bg-s3-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .services__item--s4 {
+    background-image: url(../img/bg-s4-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .services__img {
+    height: 270px; } }
 
 @media (min-width: 1200px) {
   .page-header {
     max-width: 1163px; }
   .page-header__wrap {
+    max-width: 920px; }
+  .services {
+    max-width: 1163px; }
+  .services__wrap {
     max-width: 920px; }
   .logo {
     margin-top: 30px; }
@@ -719,5 +848,56 @@ img {
     font-weight: bold; }
   .page-header__title--uppercase {
     margin: 30px 0 40px; }
-  .page-header__road-dashed {
-    left: 47.5%; } }
+  .services__item:nth-child(2) {
+    display: none; }
+  .services__item:nth-child(3) {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: #f3f3f3; }
+  .services__item--wrap-1 {
+    margin-bottom: 20px;
+    background-color: #fff; }
+  .services__item--wrap-2 {
+    background-color: #fff; }
+  .services__img {
+    height: 285px; }
+  .services__item--s1 {
+    height: 390px;
+    background-image: url(../img/bg-s1-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .services__item--s2-desktop-1 {
+    height: 80px;
+    background-image: url(../img/bg-s2-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+  .services__item--s2-desktop-2 {
+    height: 80px;
+    background-image: url(../img/bg-s3-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+  .services__item--s3 {
+    height: 150px;
+    background-image: url(../img/bg-s4-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .services__item--s4 {
+    height: 150px;
+    background-image: url(../img/bg-s5-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; } }

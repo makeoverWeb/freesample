@@ -418,6 +418,7 @@ img {
 .page-header {
   padding: 25px 15px 0;
   margin: 0 auto;
+  min-height: 600px;
   max-width: 420px;
   height: 100vh;
   text-align: center;
@@ -477,6 +478,8 @@ img {
 .logo {
   text-align: center;
   display: block;
+  width: 90px;
+  margin: 0 auto;
   position: relative;
   top: -25px; }
 
@@ -519,12 +522,12 @@ img {
     content: '';
     display: block;
     position: absolute;
-    bottom: -140px;
+    bottom: -70px;
     width: 50px;
     height: 225px;
     background-image: url(../img/road-dashed-mobile.png);
     background-repeat: no-repeat;
-    background-size: 50%; }
+    background-size: 80%; }
 
 .services {
   background-color: #f3f3f3;
@@ -545,6 +548,20 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+
+.page-footer {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 25px 15px 10px;
+  height: auto;
+  text-align: center;
+  background-color: #fff; }
+
+.page-footer__wrap {
+  color: #000; }
+
+.page-footer__title {
+  margin: 0; }
 
 .services__title {
   color: #0d3351;
@@ -640,7 +657,8 @@ img {
   color: #0d3351;
   padding-left: 20px;
   font-size: 40px;
-  margin: 30px 0 40px; }
+  margin: 30px 0 40px;
+  display: inline-block; }
 
 .label--hit::before {
   content: 'ХИТ ПРОДАЖ';
@@ -717,29 +735,24 @@ img {
   background-image: url(../img/hit-red-mobile.png);
   background-repeat: no-repeat; }
 
-.old-price--15::after {
-  content: '15000 руб.';
-  display: block;
+.old-price--15 {
+  display: inline-block;
   width: 100px;
   height: 20px;
-  position: absolute;
-  bottom: 40px;
-  right: 20px;
   color: #a2aab3;
   font-size: 16px;
   text-decoration: line-through; }
 
-.old-price--10::after {
-  content: '10000 руб.';
-  display: block;
+.old-price--10 {
+  display: inline-block;
   width: 100px;
   height: 20px;
-  position: absolute;
-  bottom: 40px;
-  right: 20px;
   color: #a2aab3;
   font-size: 16px;
   text-decoration: line-through; }
+
+.page-footer__about-for {
+  display: none; }
 
 @media (min-width: 768px) {
   .page-header {
@@ -748,6 +761,29 @@ img {
   .page-header__wrap {
     max-width: 620px;
     margin: 0 auto; }
+  .page-footer {
+    max-width: 768px; }
+  .page-footer__wrap {
+    max-width: 620px;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .page-footer__about-for--partner {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    white-space: nowrap; }
+  .page-footer__about-for--company {
+    display: block;
+    color: #000;
+    text-decoration: none; }
+  .page-footer__about-for--contacts {
+    display: block;
+    color: #000;
+    text-decoration: none; }
   .page-header__top-line {
     display: -moz-flex;
     display: -ms-flex;
@@ -835,7 +871,9 @@ img {
     background-size: cover;
     background-position: center; }
   .services__img {
-    height: 270px; } }
+    height: 270px; }
+  .page-footer__about-for {
+    display: inline-block; } }
 
 @media (min-width: 1200px) {
   .page-header {
@@ -845,6 +883,10 @@ img {
   .services {
     max-width: 1163px; }
   .services__wrap {
+    max-width: 920px; }
+  .page-footer {
+    max-width: 1163px; }
+  .page-footer__wrap {
     max-width: 920px; }
   .logo {
     margin-top: 30px; }

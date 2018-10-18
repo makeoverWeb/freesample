@@ -419,6 +419,7 @@ img {
   padding: 25px 15px 0;
   margin: 0 auto;
   min-height: 600px;
+  max-height: 590px;
   max-width: 420px;
   height: 100vh;
   text-align: center;
@@ -527,7 +528,8 @@ img {
     height: 225px;
     background-image: url(../img/road-dashed-mobile.png);
     background-repeat: no-repeat;
-    background-size: 80%; }
+    background-position: center;
+    background-size: 70%; }
 
 .services {
   background-color: #f3f3f3;
@@ -597,7 +599,9 @@ img {
   margin: 20px 0 0;
   background-color: #fff;
   text-align: left;
-  position: relative; }
+  position: relative;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s; }
   .services__item:nth-child(3) {
     display: none; }
 
@@ -751,8 +755,37 @@ img {
   font-size: 16px;
   text-decoration: line-through; }
 
+.page-footer__title {
+  font-weight: normal; }
+
 .page-footer__about-for {
   display: none; }
+
+.page-footer__contacts {
+  margin: 10px 0; }
+
+.page-footer__contact {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.page-footer__contact--vk {
+  background-image: url(../img/vk.png); }
+
+.page-footer__contact--class {
+  background-image: url(../img/class.png); }
+
+.page-footer__contact--youtube {
+  background-image: url(../img/youtube.png); }
+
+.page-footer__contact--inst {
+  background-image: url(../img/inst.png); }
+
+.page-footer__final-text {
+  margin: 10px 0 20px; }
 
 @media (min-width: 768px) {
   .page-header {
@@ -765,12 +798,17 @@ img {
     max-width: 768px; }
   .page-footer__wrap {
     max-width: 620px;
+    margin: 0 auto;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .page-footer__about-for {
+    text-align: left; }
   .page-footer__about-for--partner {
     display: block;
     color: #000;
@@ -780,10 +818,14 @@ img {
     display: block;
     color: #000;
     text-decoration: none; }
-  .page-footer__about-for--contacts {
+  .page-footer__about-for--partner--contacts {
     display: block;
     color: #000;
     text-decoration: none; }
+  .page-footer__phone {
+    text-align: left; }
+    .page-footer__phone .phone {
+      margin: 0; }
   .page-header__top-line {
     display: -moz-flex;
     display: -ms-flex;

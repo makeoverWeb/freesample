@@ -10,16 +10,20 @@ $(function() {
     });
   });
 
-$('.services__item').addClass('animated fadeInRight');
+anim('.anim-1', 'zoomInUp');
+anim('.anim-2', 'zoomInUp');
+anim('.anim-3', 'zoomInUp');
+anim('.anim-5', 'zoomInUp');
+anim('.anim-6', 'zoomInUp');
+anim('.anim-7', 'fadeInRight');
 
-anim('.button', 'zoomInUp');
-function anim(button, zoomInUp) {
-    $(button).css('opacity', 0);
+function anim(name, type) {
+    $(name).css('opacity', 0);
     console.log("sss");
-    $(button).waypoint(function() {
-        var typ = "animated " + zoomInUp;
-        $(button).addClass(typ);
-        $(button).css('opacity', 1);
-    }, { offset: '40%' });
+    $(name).waypoint(function() {
+        var typ = "animated " + type;
+        $(name).addClass(typ);
+        $(name).css('opacity', 1);
+    }, { offset: '90%' });
 }
 });

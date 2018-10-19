@@ -838,6 +838,9 @@ img {
             justify-content: space-between; }
   .main-nav {
     display: inline-block; }
+  .main-nav__list {
+    width: 400px;
+    left: 100px; }
   .main-nav__registration {
     display: block; }
   .main-nav__menu {
@@ -930,6 +933,8 @@ img {
     max-width: 1163px; }
   .page-footer__wrap {
     max-width: 920px; }
+  .main-nav__list {
+    left: 150px; }
   .logo {
     margin-top: 30px; }
   .page-header__title {
